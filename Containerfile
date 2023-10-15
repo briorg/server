@@ -10,7 +10,7 @@
 
 # !! Warning: changing these might not do anything for you. Read comment above.
 ARG IMAGE_MAJOR_VERSION=38
-ARG BASE_IMAGE_URL=ghcr.io/ublue-os/base-main
+ARG BASE_IMAGE_URL=ghcr.io/ublue-os/ucore-hci
 
 FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION}
 

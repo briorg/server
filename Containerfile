@@ -22,7 +22,7 @@ ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
 COPY cosign.pub /usr/share/ublue-os/cosign.pub
 
-RUN ln -sr /usr/bin/rpm-ostree /usr/bin/bootc
+# RUN ln -sr /usr/bin/rpm-ostree /usr/bin/bootc
 
 # Copy the bling from ublue-os/bling into tmp, to be installed later by the bling module
 # Feel free to remove these lines if you want to speed up image builds and don't want any bling
@@ -39,7 +39,7 @@ COPY --from=ghcr.io/ublue-os/bling:latest /modules /tmp/modules/
 # Custom modules overwrite defaults
 COPY modules /tmp/modules/
 
-COPY --from=ublue-os/config /rpms /tmp/rpms
+COPY --from=ghcr.io/ublue-os/config /rpms /tmp/rpms
 RUN rpm-ostree install /tmp/rpms/*.rpm
 
 # `yq` is used for parsing the yaml configuration

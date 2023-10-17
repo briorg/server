@@ -4,7 +4,7 @@ name: server
 description: A minimal Fedora ostree base image
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/ucore
+base-image: ghcr.io/ublue-os/ucore-hci
 image-version: stable
 
 # module configuration, executed in order
@@ -39,6 +39,9 @@ modules:
       # - devpod # https://devpod.sh/ as an rpm
 
 
+  - type: script
+    scripts:
+      - enable-bootc.sh
 
   - type: script
     scripts:

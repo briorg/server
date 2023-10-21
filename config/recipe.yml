@@ -28,6 +28,7 @@ modules:
     install:
       - bootc
       - bootupd
+      - gdisk
       # - micro
       #- starship
     remove:
